@@ -38,18 +38,15 @@ public class ArrayList<T> {
 		for (int i = 0; i < loc; i++) {
 			newArray[i] = array[i];
 		}
-		for (int i = loc + 1; i < array.length; i++) {
-			newArray[i] = array[i];
+		for (int i = loc + 1; i < array.length + 1; i++) {
+			newArray[i] = array[i - 1];
 		}
 
 		array = newArray;
-		
 
 	}
 
 	public void set(int loc, T val) throws IndexOutOfBoundsException {
-
-		// T[] newArray = (T[]) new Object[array.length];
 
 		array[loc] = val;
 
@@ -62,15 +59,29 @@ public class ArrayList<T> {
 		for (int i = 0; i < loc; i++) {
 			newArray[i] = array[i];
 		}
-		
+		for (int i = loc + 1; i < array.length; i++) {
+			newArray[i - 1] = array[i];
+		}
+
 		array = newArray;
-		
-		
+
 	}
 
 	public boolean contains(T val) {
 
+		for (int i = 0; i < array.length; i++) {
+			
+			if (array[i] == val) {
+				return true;
+			}
+		}
+		
 		return false;
+	}
+
+	public int size() {
+		
+		return array.length;
 	}
 
 }

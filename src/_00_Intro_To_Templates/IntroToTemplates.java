@@ -34,6 +34,7 @@ public class IntroToTemplates {
 		
 		return t;
 	}
+	
 }
 
 //Here a class is created that has a template called AnotherTemplate
@@ -42,10 +43,12 @@ class SomeClass<AnotherTemplate>{
 	//Here the t variable can be any object type
 	AnotherTemplate t;
 	
-	//Here the t2t variable can be any object type
+	//Here the t2 variable can be any object type
 	SomeClass(AnotherTemplate t2){
 		this.t = t2;
 	}
 }
+
+
 
 
