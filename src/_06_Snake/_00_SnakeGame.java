@@ -75,7 +75,7 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 
 	public void startGame() {
 		// 1. Save the instructions for the game in the following string variable.
-		String instructions = "Use the arrow keys or WASD to turn the snake. Collect the apples and don't crash into anything! Difficulty"
+		String instructions = "Use the arrow keys or WASD to turn the snake. Collect the apples and don't crash into anything! Difficulty "
 				+ "determines how fast the snake goes.";
 
 		String[] options = new String[] { "Expert", "Moderate", "Beginner" };
@@ -89,13 +89,13 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 
 		switch (choice) {
 		case "Expert":
-			timer.setDelay(1000 / 60);
+			timer.setDelay(1000 / 15);
 			break;
 		case "Moderate":
-			timer.setDelay(1000 / 30);
+			timer.setDelay(1000 / 10);
 			break;
 		case "Beginner":
-			timer.setDelay(1000 / 15);
+			timer.setDelay(1000 / 5);
 			break;
 		}
 
@@ -147,7 +147,7 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 		case KeyEvent.VK_S:
 			snake.setDirection(Direction.DOWN);
 			break;
-		case KeyEvent.VK_E:
+		case KeyEvent.VK_A:
 			snake.setDirection(Direction.LEFT);
 			break;
 
@@ -167,12 +167,12 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 
 		Random randInt = new Random();
 
-		Location newFoodLoc = new Location(randInt.nextInt(16), randInt.nextInt(13));
+		Location newFoodLoc = new Location(randInt.nextInt(15), randInt.nextInt(12));
 
 		foodLocation = newFoodLoc;
 
 		if (snake.isLocationOnSnake(foodLocation)) {
-			newFoodLoc = new Location(randInt.nextInt(16), randInt.nextInt(13));
+			newFoodLoc = new Location(randInt.nextInt(15), randInt.nextInt(12));
 			foodLocation = newFoodLoc;
 		}
 
