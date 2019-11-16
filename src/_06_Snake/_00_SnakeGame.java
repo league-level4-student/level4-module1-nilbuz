@@ -196,8 +196,9 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 		// reset the snake and the food and start the timer
 		// else, exit the game
 		if (choice == "Yes") {
-			snake = new Snake(new Location(WIDTH / 2, HEIGHT / 2));
+			snake.reset(new Location(WIDTH / 2, HEIGHT / 2));
 			setFoodLocation();
+			timer.start();
 		} else {
 			System.exit(1);
 		}
